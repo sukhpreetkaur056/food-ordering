@@ -7,6 +7,7 @@ import Navbar from './components/Navbar'
 import Review from './components/Review'
 import Menu from './components/Menu'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Login from './components/Login'
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
 
           <Route path='/' element={<Hero />} />
           <Route path='/menu' element={<Menu/>}/>
+          <Route path='/login' element={<Login/>}/>
         </Routes>
         <Footer />
       </BrowserRouter>
