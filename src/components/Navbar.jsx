@@ -11,7 +11,7 @@ function Navbar() {
                        <Link to={'/'}>HOME</Link>
                     </li>
                     <li>
-                        <Link to={'/menu'}>MENU</Link>
+                        <Link to={'https://food-delivery-mu-five.vercel.app/'}>MENU</Link>
                     </li>
                     <li>
                          <Link to={'/about'}>ABOUT</Link>
@@ -20,7 +20,7 @@ function Navbar() {
                      <Link to={'/contact'}>CONTACT</Link>
                     </li>
                     <li>
-                        <Link to={'/login'}>Login</Link>
+                        <Link to={'/login'}>LOGIN</Link>
                     </li>
                 </ul>
             </nav>

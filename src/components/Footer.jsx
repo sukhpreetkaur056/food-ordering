@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="footer-container">
         {/* Brand */}
         <div className="footer-section">
-          <h2 className="footer-logo" style={{color:"white"}}>TastyBite</h2>
+          <h2 className="footer-logo" style={{color:"white"}}>TapToEat</h2>
           <p>Experience the authentic taste of tradition, delivered fresh to your doorstep. Every bite tells a story of flavor and passion.</p>
         </div>
 
