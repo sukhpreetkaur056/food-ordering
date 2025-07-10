@@ -7,13 +7,13 @@ const Footer = () => {
       <div className="footer-container">
         {/* Brand */}
         <div className="footer-section">
-          <h2 className="footer-logo">TastyBite</h2>
+          <h2 className="footer-logo" style={{color:"white"}}>TastyBite</h2>
           <p>Experience the authentic taste of tradition, delivered fresh to your doorstep. Every bite tells a story of flavor and passion.</p>
         </div>
 
         {/* Quick Links */}
         <div className="footer-section">
-          <h3>Quick Links</h3>
+          <h3 className='footer-head' style={{color:"white"}}>Quick Links</h3>
           <ul>
             <li><a href="/">Home</a></li>
             <li><a href="/menu">Our Menu</a></li>
@@ -25,7 +25,7 @@ const Footer = () => {
 
         {/* Contact */}
         <div className="footer-section">
-          <h3>Get in Touch</h3>
+          <h3 className='footer-head' style={{color:"white"}}>Get in Touch</h3>
           <ul>
             <li>📍 123 Food Street, Foodie Lane</li>
             <li>📞 +91 98765 43210</li>
@@ -36,7 +36,7 @@ const Footer = () => {
 
         {/* Social */}
         <div className="footer-section">
-          <h3>Connect With Us</h3>
+          <h3 className='footer-head' style={{color:"white"}}>Connect With Us</h3>
           <div className="social-icons">
             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
               <FaFacebook size={20} />
@@ -56,7 +56,7 @@ const Footer = () => {
       </div>
 
       <div className="footer-bottom">
-        <p>&copy; {new Date().getFullYear()} TastyBite. All rights reserved.</p>
+        <p style={{color:"white"}}>&copy; {new Date().getFullYear()} TapToEat. All rights reserved.</p>
       </div>
     </footer>
   );

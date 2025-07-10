@@ -88,7 +88,7 @@
 
 /* Footer Styles */
 .custom-footer {
-  background: linear-gradient(to right, #c39898, #952424);
+  background: linear-gradient(to right,  #cd7161, #ea8444);
   color: #ffffff;
   padding: 4rem 0 2rem;
   position: relative;
@@ -111,12 +111,9 @@
 }
 
 .footer-logo {
-  font-size: 2rem;
-  font-weight: 700;
-  background: linear-gradient(45deg, #ff4b2b, #ff416c);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom: 0.5rem;
+ font-size: 40px;
+  color: white !important;
+
 }
 
 .footer-section h3 {
@@ -133,7 +130,7 @@
   bottom: -0.5rem;
   width: 50px;
   height: 2px;
-  background: linear-gradient(45deg, #ff4b2b, #ff416c);
+  color: #ffffff;
 }
 
 .footer-section ul {
@@ -146,9 +143,14 @@
   margin-bottom: 0.8rem;
 }
 
+  .footer-head{
+    color: white;
+  }
+
 .footer-section ul li a {
   color: white;
   text-decoration: none;
+  text-decoration: solid;
   transition: color 0.3s ease;
 }
 
@@ -174,11 +176,11 @@
 
 .social-icons a:hover {
   transform: translateY(-3px);
-  background: linear-gradient(45deg, #ff4b2b, #ff416c);
+  background: linear-gradient(45deg, );
 }
 
 .social-icons a:hover svg {
-  color: #ffffff !important;
+  color: black !important;
 }
 
 .footer-bottom {
@@ -197,8 +199,14 @@
   }
   
   .footer-section {
+  
     text-align: center;
   }
+
+  .footer-head{
+    color: white;
+  }
+
   
   .footer-section h3::after {
     left: 50%;

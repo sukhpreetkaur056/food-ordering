@@ -320,7 +320,7 @@
 
 .footer-logo {
   font-size: 24px;
-  color: #e67e22;
+  color: white !important;
   font-weight: bold;
 }
 
