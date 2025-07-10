@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - Baba Chicken</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background: linear-gradient(120deg, #fff6e6 0%, #ffe8d9 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+        .progress-bar {
+            width: 100%;
+            height: 6px;
+            background: #f3f3f3;
+            border-radius: 4px;
+            margin-bottom: 32px;
+            overflow: hidden;
+        }
+        .progress-bar-inner {
+            width: 80%;
+            height: 100%;
+            background: linear-gradient(90deg, #fc8019 60%, #ffb366 100%);
+            border-radius: 4px;
+            transition: width 0.4s;
+        }
+        .container {
+            max-width: 420px;
+            margin: 48px auto 0 auto;
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 8px 32px rgba(252,128,25,0.10), 0 1.5px 6px rgba(0,0,0,0.04);
+            padding: 36px 28px 28px 28px;
+            position: relative;
+        }
+        h2 {
+            text-align: center;
+            color: #fc8019;
+            margin-bottom: 8px;
+            font-size: 2rem;
+            letter-spacing: 0.5px;
+        }
+        .payment-icons {
+            display: flex;
+            justify-content: center;
+            gap: 18px;
+            margin-bottom: 18px;
+        }
+        .payment-icons i, .payment-icons img {
+            font-size: 1.6rem;
+            color: #fc8019;
+            opacity: 0.85;
+            vertical-align: middle;
+            height: 28px;
+        }
+        .section {
+            background: #fff9f3;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(252,128,25,0.04);
+            padding: 18px 16px 10px 16px;
+            margin-bottom: 22px;
+        }
+        .section-title {
+            font-size: 1.1rem;
+            color: #fc8019;
+            font-weight: 600;
+            margin-bottom: 10px;
+            letter-spacing: 0.2px;
+        }
+        .order-summary {
+            margin-bottom: 0;
+        }
+        .order-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-size: 15px;
+        }
+        .order-total {
+            font-weight: bold;
+            font-size: 17px;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            border-top: 1px solid #ffe0c2;
+            padding-top: 8px;
+        }
+        .payment-methods {
+            margin-bottom: 0;
+        }
+        .payment-option {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            cursor: pointer;
+            padding: 7px 0 7px 0;
+            border-radius: 6px;
+            transition: background 0.18s;
+        }
+        .payment-option input[type="radio"] {
+            margin-right: 10px;
+            accent-color: #fc8019;
+        }
+        .payment-option.selected, .payment-option:hover {
+            background: #fff2e0;
+        }
+        .payment-option label {
+            cursor: pointer;
+            font-size: 1rem;
+            color: #3d4152;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+        .payment-details {
+            margin-bottom: 10px;
+            margin-top: 8px;
+            animation: fadeIn 0.3s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: none; }
+        }
+        .hidden {
+            display: none;
+        }
+        .pay-btn {
+            width: 100%;
+            padding: 13px;
+            background: linear-gradient(90deg, #fc8019 80%, #ffb366 100%);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(252,128,25,0.10);
+            margin-top: 8px;
+            transition: background 0.2s, transform 0.1s;
+        }
+        .pay-btn:hover:not(:disabled) {
+            background: linear-gradient(90deg, #e67317 80%, #ffb366 100%);
+            transform: translateY(-2px) scale(1.02);
+        }
+        .pay-btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+        .confirmation {
+            text-align: center;
+            color: #fff;
+            font-size: 1.25rem;
+            margin-top: 28px;
+            background: linear-gradient(90deg, #48c479 80%, #6be585 100%);
+            border-radius: 10px;
+            padding: 22px 10px 18px 10px;
+            box-shadow: 0 2px 8px rgba(72,196,121,0.10);
+            animation: fadeIn 0.4s;
+        }
+        .confirmation i {
+            font-size: 2.2rem;
+            margin-bottom: 8px;
+            display: block;
+        }
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 18px;
+            color: #fc8019;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 11px 12px;
+            margin-bottom: 10px;
+            border-radius: 6px;
+            border: 1.5px solid #ffe0c2;
+            font-size: 1rem;
+            background: #fff;
+            transition: border 0.2s, box-shadow 0.2s;
+        }
+        input[type="text"]:focus {
+            border: 1.5px solid #fc8019;
+            outline: none;
+            box-shadow: 0 2px 8px rgba(252,128,25,0.08);
+        }
+        @media (max-width: 600px) {
+            .container {
+                max-width: 98vw;
+                margin: 0.5rem;
+                padding: 18px 4vw 18px 4vw;
+            }
+            .progress-bar {
+                margin-bottom: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar"><div class="progress-bar-inner"></div></div>
+    <div class="container">
+        <h2>Payment</h2>
+       
+        <div class="section">
+            <div class="section-title">Order Summary</div>
+            <div class="order-summary" id="orderSummary"></div>
+        </div>
+        <form id="paymentForm">
+            <div class="section">
+                <div class="section-title">Select Payment Method</div>
+                <div class="payment-methods">
+                    <div class="payment-option" data-method="upi">
+                        <input type="radio" name="paymentMethod" id="upi" value="upi" checked>
+                        <label for="upi"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/PhonePe_Logo.png/24px-PhonePe_Logo.png" style="height:20px;vertical-align:middle;"> UPI</label>
+                    </div>
+                    <div class="payment-option" data-method="card">
+                        <input type="radio" name="paymentMethod" id="card" value="card">
+                        <label for="card"><i class="fas fa-credit-card"></i> Card</label>
+                    </div>
+                    <div class="payment-option" data-method="cod">
+                        <input type="radio" name="paymentMethod" id="cod" value="cod">
+                        <label for="cod"><i class="fas fa-money-bill-wave"></i> Cash on Delivery</label>
+                    </div>
+                </div>
+                <div class="payment-details" id="upiDetails">
+                    <input type="text" id="upiId" placeholder="Enter UPI ID (e.g. name@bank)">
+                </div>
+                <div class="payment-details hidden" id="cardDetails">
+                    <input type="text" id="cardNumber" placeholder="Card Number (16 digits)" maxlength="19">
+                    <input type="text" id="cardName" placeholder="Name on Card">
+                    <div style="display:flex;gap:10px;">
+                        <input type="text" id="cardExpiry" placeholder="MM/YY" maxlength="5">
+                        <input type="text" id="cardCVV" placeholder="CVV" maxlength="4">
+                    </div>
+                    <div style="display:flex;gap:8px;margin-top:2px;">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa" style="height:18px;">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Mastercard-logo.png" alt="Mastercard" style="height:18px;">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/3/30/Amex_logo.svg" alt="Amex" style="height:18px;">
+                    </div>
+                </div>
+                <button type="submit" class="pay-btn" id="payBtn">Pay Now</button>
+            </div>
+        </form>
+        <div class="confirmation hidden" id="confirmation"></div>
+        <a href="index.html" class="back-link">&larr; Back to Menu</a>
+    </div>
+    <script>
+        // Read cart from localStorage
+        let cart = JSON.parse(localStorage.getItem('restaurantCart') || '[]');
+        const orderSummary = document.getElementById('orderSummary');
+        const paymentForm = document.getElementById('paymentForm');
+        const upiDetails = document.getElementById('upiDetails');
+        const cardDetails = document.getElementById('cardDetails');
+        const confirmation = document.getElementById('confirmation');
+        const payBtn = document.getElementById('payBtn');
+
+        // Render order summary
+        function renderOrderSummary() {
+            if (!cart.length) {
+                orderSummary.innerHTML = '<div style="color:#e74c3c;text-align:center;">Your cart is empty.</div>';
+                paymentForm.style.display = 'none';
+                return;
+            }
+            let html = '';
+            let total = 0;
+            cart.forEach(item => {
+                html += `<div class="order-item"><span>${item.name} x${item.quantity}</span><span>₹${item.price * item.quantity}</span></div>`;
+                total += item.price * item.quantity;
+            });
+            html += `<div class="order-total"><span>Total</span><span>₹${total}</span></div>`;
+            orderSummary.innerHTML = html;
+        }
+        renderOrderSummary();
+
+        // Payment method switching and highlight
+        function updatePaymentSelection() {
+            document.querySelectorAll('.payment-option').forEach(opt => {
+                const radio = opt.querySelector('input[type="radio"]');
+                if (radio.checked) {
+                    opt.classList.add('selected');
+                } else {
+                    opt.classList.remove('selected');
+                }
+            });
+        }
+        document.querySelectorAll('input[name="paymentMethod"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                upiDetails.classList.toggle('hidden', this.value !== 'upi');
+                cardDetails.classList.toggle('hidden', this.value !== 'card');
+                updatePaymentSelection();
+            });
+        });
+        updatePaymentSelection();
+
+        // Payment form submission
+        paymentForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const method = document.querySelector('input[name="paymentMethod"]:checked').value;
+            payBtn.disabled = true;
+            payBtn.textContent = 'Processing...';
+            setTimeout(() => {
+                let success = true;
+                let message = '';
+                if (method === 'upi') {
+                    const upiId = document.getElementById('upiId').value.trim();
+                    if (!upiId.match(/^\w+@\w+$/)) {
+                        success = false;
+                        message = 'Please enter a valid UPI ID (e.g., name@bank).';
+                    } else {
+                        message = '<i class="fas fa-check-circle"></i>Payment successful via UPI!<br>Your order has been placed.';
+                    }
+                } else if (method === 'card') {
+                    const cardNumber = document.getElementById('cardNumber').value.replace(/\s+/g, '');
+                    const cardName = document.getElementById('cardName').value.trim();
+                    const cardExpiry = document.getElementById('cardExpiry').value.trim();
+                    const cardCVV = document.getElementById('cardCVV').value.trim();
+                    if (!cardNumber.match(/^\d{16}$/) || !cardName || !cardExpiry.match(/^(0[1-9]|1[0-2])\/(\d{2})$/) || !cardCVV.match(/^\d{3,4}$/)) {
+                        success = false;
+                        message = 'Please enter valid card details.';
+                    } else {
+                        message = '<i class="fas fa-check-circle"></i>Payment successful via Card!<br>Your order has been placed.';
+                    }
+                } else if (method === 'cod') {
+                    message = '<i class="fas fa-check-circle"></i>Order placed!<br>Please pay cash on delivery.';
+                }
+                if (success) {
+                    confirmation.innerHTML = message;
+                    confirmation.classList.remove('hidden');
+                    paymentForm.style.display = 'none';
+                    localStorage.removeItem('restaurantCart');
+                } else {
+                    confirmation.innerHTML = message;
+                    confirmation.classList.remove('hidden');
+                    setTimeout(() => {
+                        confirmation.classList.add('hidden');
+                        payBtn.disabled = false;
+                        payBtn.textContent = 'Pay Now';
+                    }, 2500);
+                }
+                if (success) {
+                    payBtn.textContent = 'Done!';
+                }
+            }, 1200);
+        });
+    </script>
+</body>
+</html> 
