@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Payment - Baba Chicken</title>
+    <title>Payment - Burger hackers</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body {
@@ -203,10 +203,114 @@
                 margin-bottom: 18px;
             }
         }
+        nav {
+            background: white;
+            padding: 18px 14px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 999;
+        }
+        .logo img {
+            height: 56px;
+            width: auto;
+            animation: bounce 1s ease-in-out infinite;
+            display: inline;
+        }
+        @keyframes bounce {
+            0%, 100%{ transform: translateY(0); }
+            50%{ transform: translateY(-10px); }
+        }
+        .logo {
+            font-size: 24px;
+            display: inline-block;
+            transition: transform 0.3s ease-in-out;
+        }
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .nav-links li {
+            display: inline-block;
+        }
+        .nav-links a {
+            color: #e67317;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            padding: 10px 22px;
+            border-radius: 5px;
+            text-underline-offset: 5px;
+            transition: all 0.3s ease-in-out;
+            display: inline-block;
+        }
+        .nav-links a:hover {
+            text-decoration: underline;
+            text-decoration-color: #FFA0A1;
+            animation: bounce 1s ease-in-out;
+        }
+        .nav-links li:last-child a {
+            margin-right: 24px;
+        }
+        @media (max-width: 900px) {
+            .container {
+                flex-direction: column;
+                width: 98vw;
+                height: auto;
+                min-height: 100vh;
+            }
+            .left, .right {
+                flex: none;
+                width: 100%;
+                min-width: unset;
+                min-height: 220px;
+                padding: 28px 16px;
+            }
+            .right {
+                padding: 32px 10vw;
+            }
+            .form-title, .form-subtitle, form {
+                max-width: 100%;
+            }
+        }
+        @media (max-width: 600px) {
+            .container {
+                width: 100vw;
+                border-radius: 0;
+            }
+            .right {
+                padding: 24px 4vw;
+            }
+            .left {
+                padding: 20px 8px 8px 8px;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="progress-bar"><div class="progress-bar-inner"></div></div>
+    <nav>
+        <a href="#" class="logo">
+            <img src="logo.jpg" alt="TapToEat Logo">
+        </a>
+        <ul class="nav-links">
+            <li><a href="home.html">HOME</a></li>
+            <li><a href="index.html">MENU</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+            <li><a href="login.html">LOGIN</a></li>
+        </ul>
+    </nav>
+    <div class="progress-bar" style="margin-top:80px;"><div class="progress-bar-inner"></div></div>
     <div class="container">
         <h2>Payment</h2>
        
