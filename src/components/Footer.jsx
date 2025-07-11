@@ -16,10 +16,10 @@ const Footer = () => {
           <h3 className='footer-head' style={{color:"white"}}>Quick Links</h3>
           <ul>
             <li><a href="/">Home</a></li>
-            <li><a href="/menu">Our Menu</a></li>
+            <li><a href="menu.html">Our Menu</a></li>
             <li><a href="/specials">Today's Specials</a></li>
-            <li><a href="/about">About Us</a></li>
-            <li><a href="/contact">Contact Us</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
           </ul>
         </div>
 
@@ -29,7 +29,7 @@ const Footer = () => {
           <ul>
             <li>📍 123 Food Street, Foodie Lane</li>
             <li>📞 +91 98765 43210</li>
-            <li>📧 hello@tastybite.in</li>
+            <li>📧 hello@TapToEat.in</li>
             <li>⏰ Open: 10:00 AM - 10:00 PM</li>
           </ul>
         </div>
