@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaInstagram, FaFacebook, FaTwitter, FaYoutube } from "react-icons/fa";
-
+import {Link} from 'react-router-dom';
 const Footer = () => {
   return (
     <footer className="custom-footer">
@@ -16,11 +16,11 @@ const Footer = () => {
           <h3 className='footer-head' style={{color:"white"}}>Quick Links</h3>
           <ul>
             <Link to="/"><li>Home</li></Link>
-            
-            <li><a href="index.html">Our Menu</a></li>
-            <li><a href="/specials">Today's Specials</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
+             <Link to="index.html"><li>Our menu</li></Link>
+             <Link to="/specials"><li>Today's Specials</li></Link>
+             <Link to="about.html"><li>About</li></Link>
+             <Link to="contact.html"><li>Contact Us</li></Link>
+           
           </ul>
         </div>
 
