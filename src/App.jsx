@@ -8,6 +8,7 @@ import Review from './components/Review'
 import Menu from './components/Menu'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Login from './components/Login'
+import OfferCard from './components/OfferCard'
 
 function App() {
 
