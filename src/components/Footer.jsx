@@ -16,7 +16,7 @@ const Footer = () => {
           <h3 className='footer-head' style={{color:"white"}}>Quick Links</h3>
           <ul>
             <li><a href="/">Home</a></li>
-            <li><a href="menu.html">Our Menu</a></li>
+            <li><a href="index.html">Our Menu</a></li>
             <li><a href="/specials">Today's Specials</a></li>
             <li><a href="about.html">About Us</a></li>
             <li><a href="contact.html">Contact Us</a></li>
