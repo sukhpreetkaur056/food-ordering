@@ -21,7 +21,7 @@ function Hero() {
                     Discover authentic flavors delivered fresh to your doorstep.
                     From classic favorites to modern delights, every bite tells a story.
                 </p>
-                <a href="#menu" className="order-btn">
+                <a href="index.html" className="order-btn">
                     TapToEat
                 </a>
             </div>

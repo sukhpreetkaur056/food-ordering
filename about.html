@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Food Ordering Management System</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #f8fafc 0%, #e67317 100%);
+            color: #222;
+        }
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+            padding: 40px 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        .container::before {
+            content: '';
+            position: absolute;
+            top: -80px;
+            right: -80px;
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(135deg, #e67317 60%, #e67317 100%);
+            border-radius: 50%;
+            opacity: 0.15;
+            z-index: 0;
+        }
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #e67317;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+            z-index: 1;
+            position: relative;
+        }
+        .divider {
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #e67317 0%, #e67317 100%);
+            border-radius: 2px;
+            margin: 16px 0 32px 0;
+        }
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+            z-index: 1;
+            position: relative;
+        }
+        .about-text {
+            flex: 2;
+        }
+        .about-text h2 {
+            color: #e67317;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        .about-text p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 18px;
+        }
+        .about-image {
+            flex: 1;
+            min-width: 220px;
+            display: flex;
+            justify-content: center;
+        }
+        .about-image img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 50%;
+            box-shadow: 0 4px 24px rgba(230, 115, 23, 0.25);
+            border: 6px solid #fffbe6;
+        }
+        .features {
+            margin-top: 40px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            z-index: 1;
+            position: relative;
+            
+        }
+        .feature {
+            flex: 1 1 220px;
+            background: #ffe3cc;
+            color: #222;
+            border-radius: 14px;
+            padding: 24px 18px;
+            box-shadow: 0 6px 24px 0 rgba(230, 115, 23, 0.18), 0 1.5px 6px 0 rgba(0,0,0,0.08);
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .feature:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 16px 40px 0 rgba(230, 115, 23, 0.22), 0 3px 12px 0 rgba(0,0,0,0.10);
+        }
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #e67317;
+        }
+        @media (max-width: 800px) {
+            .about-content {
+                flex-direction: column;
+                gap: 24px;
+            }
+            .features {
+                flex-direction: column;
+                gap: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>About Us</h1>
+        <div class="divider"></div>
+        <div class="about-content">
+            <div class="about-text">
+                <h2>Welcome to TapToEat!</h2>
+                <p>
+                    TapToEat is your trusted partner in seamless food ordering and management. Founded with a passion for culinary excellence and technology, our mission is to connect food lovers with their favorite restaurants, making every meal a delightful experience.
+                </p>
+                <p>
+                    Whether you're a restaurant owner looking to streamline your operations or a customer craving delicious food at your fingertips, TapToEat brings convenience, speed, and reliability to your table.
+                </p>
+            </div>
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=facearea&w=400&h=400&facepad=2" alt="About TapToEat">
+            </div>
+        </div>
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon">🍽️</div>
+                <h3>Wide Restaurant Network</h3>
+                <p>Partnered with top restaurants to offer a diverse menu for every taste and occasion.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">⚡</div>
+                <h3>Fast & Secure Ordering</h3>
+                <p>Enjoy a smooth, secure, and lightning-fast ordering experience from start to finish.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">📱</div>
+                <h3>Easy Management</h3>
+                <p>Intuitive dashboard for restaurants to manage orders, menus, and customer feedback.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🌱</div>
+                <h3>Fresh & Quality Food</h3>
+                <p>We ensure every order is prepared with the freshest ingredients and utmost care.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
