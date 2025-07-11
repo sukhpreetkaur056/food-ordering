@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaInstagram, FaFacebook, FaTwitter, FaYoutube } from "react-icons/fa";
-import {Link} from 'react-router-dom';
+
 
 const Footer = () => {
   return (
@@ -16,12 +16,11 @@ const Footer = () => {
         <div className="footer-section">
           <h3 className='footer-head' style={{color:"white"}}>Quick Links</h3>
           <ul>
-            <Link to="/"><li>Home</li></Link>
-             
-             <Link to="/specials"><li>Today's Specials</li></Link>
-             
-             
-           
+            <li><a href="/">Home</li>
+               <li><a href="index.html">Our menu</li>
+               <li><a href="/special">Today's Special</li>
+             <li><a href="about.html">About </li>
+                 <li><a href="contact.html">Contact</li>
           </ul>
         </div>
 
