@@ -9,7 +9,7 @@ function OfferCard(props) {
                         <h3>{props.title}</h3>
                         <p>{props.description}</p>
                         <div class="card-price">Rs. {props.price}</div>
-                        <a href="#" class="card-button">{props.btnText || "View Details"}</a>
+                        <a href="#" class="card-button">{props.btnText || "Order Now"}</a>
                     </div>
                 </div>
   )
