@@ -22,6 +22,7 @@ function App() {
           <Route path='/' element={<Hero />} />
           <Route path='/menu' element={<Menu/>}/>
           <Route path='/login' element={<Login/>}/>
+          <Route path='/specials' element={<OfferCard/>}/>
         </Routes>
         <Footer />
       </BrowserRouter>
