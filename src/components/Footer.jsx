@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaInstagram, FaFacebook, FaTwitter, FaYoutube } from "react-icons/fa";
-import {Link} from 'react-router-dom';
+
 const Footer = () => {
   return (
     <footer className="custom-footer">
